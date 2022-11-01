@@ -110,4 +110,5 @@ def start_port_scanner():
         if(cmd(fxc)):
             pass
         else:
-            print(f"{ico.r_c2} {report.unknown_root(fxc)}")
+            if(fxc!='back'):
+                print(f"{ico.r_c2} {report.unknown_root(fxc)}")
