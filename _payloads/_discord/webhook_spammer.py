@@ -8,7 +8,7 @@ import time
 class config:
     ps = f'[{ico.foxy_r}] > '
     history = []
-
+    _continue = True
     webhook = ''
     amount  = 0
     message = ''
@@ -20,6 +20,7 @@ class config:
 
 {ico.r_c2} [Advanced]:
     show config     : show setted informations ==> config informations  (Dont use <.> while setting informations...)
+    back            : back to Foxy
     """
 
 def print_config():
@@ -40,20 +41,24 @@ ___________________________________________
 ___________________________________________""")
 
 def run_exploit():
-    print(f"{ico.b_m} Starting webhook spammer")
-    for i in range(0,3):
-        print('.',end='')
-        time.sleep(0.7)
-    time.sleep(1)
-    n = config.amount
-    t=1
-    webhook = SyncWebhook.from_url(config.webhook)
-    while(n>0):
-        webhook.send(config.message)
-        print(f"{ico.b_m} Sent Messages : [{color.blue}{t}{color.reset}]",end='\r')
-        n-=1
-        t+=1
-    print(f"{ico.b_m} Finished webhook spammer.\n")
+    try:
+        print(f"{ico.b_m} Starting webhook spammer")
+        for i in range(0,3):
+            print('.',end='')
+            time.sleep(0.7)
+        time.sleep(1)
+        n = config.amount
+        t=1
+        webhook = SyncWebhook.from_url(config.webhook)
+        while(n>0):
+            webhook.send(config.message)
+            print(f"{ico.b_m} Sent Messages : [{color.blue}{t}{color.reset}]",end='\r')
+            n-=1
+            t+=1
+        print(f"{ico.b_m} Finished webhook spammer.\n")
+    except:
+        print(f"{ico.r_m} Please set config. Type {color.blue}help{color.reset} for commands...")
+        
 
 def vparse(vname,value):
     if(vname=="webhook"):
@@ -110,7 +115,13 @@ def cmd(fxc):
             return True 
         case 'show config' :
             print_config()
+        case 'config' :
+            print_config()
+        case 'show' :
+            print_config()
             return True 
+        case 'back' :
+            config._continue = False
         case 'help' :
             print(config._help)
             return True 
@@ -123,7 +134,7 @@ def cmd(fxc):
 
 def start_webhook_spammer():
     config.ps = f'[{color.red}foxy::discord::webhook-spammer{color.reset}] > '
-    while True:
+    while(config._continue):
         fxc = input(config.ps)
         config.history.append(fxc)
         if(cmd(fxc)):
