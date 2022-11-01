@@ -123,6 +123,9 @@ def csystem(fxc):
         case 'list' :
             lpayloads()
             return True
+        case 'show' :
+            lpayloads()
+            return True
         
 
     return False 
@@ -135,6 +138,6 @@ def init():
         if(csystem(fxc)):
             pass 
         elif(payloadsystem(fxc)):
-            sys.exit()
+            pass
         else:
             print(f"{ico.r_c2} {report.unknown_root(fxc)}")        
