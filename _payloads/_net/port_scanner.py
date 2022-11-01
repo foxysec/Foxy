@@ -7,7 +7,7 @@ import socket
 class config:
     ps = f'[{ico.foxy_r}] > '
     history = []
-
+    _continue = True
     target = ''
 
     _help = f"""
@@ -17,6 +17,7 @@ class config:
 
 {ico.r_c2} [Advanced]:
     show config     : show setted informations ==> config informations  (Dont use <.> while setting informations...)
+    back            : back to Foxy
     """
 
 def print_config():
@@ -37,18 +38,21 @@ def run_exploit():
     print("\tPort\tAction\tService")
     lst = [20,21,22,23,53,25,40,44,69,80,139,137,443,444,445,4444,8080, 8443]
     for port in lst:
-        s = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
-        socket.setdefaulttimeout(1)
-        check = s.connect_ex((target,port))
-        if(check==0):
-            version = None
-            try:
-                version = socket.getservbyport(port, "tcp")
-            except:
-                pass
-            print(f"\t{port}\topen\t{version}")
-        s.close()
-         
+        try:
+            s = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
+            socket.setdefaulttimeout(1)
+            check = s.connect_ex((target,port))
+            if(check==0):
+                version = None
+                try:
+                    version = socket.getservbyport(port, "tcp")
+                except:
+                    pass
+                print(f"\t{port}\topen\t{version}")
+            s.close()
+        except:
+            pass
+            
 
 def vparse(vname,value):
     if(vname=="target"):
@@ -95,10 +99,12 @@ def cmd(fxc):
         case 'exploit':
             run_exploit()
             return True
+        case 'back' :
+            config._continue = False
 
 def start_port_scanner():
     config.ps = f'[{color.red}foxy::net::port-scanner{color.reset}] > '
-    while True:
+    while(config._continue):
         fxc = input(config.ps)
         config.history.append(fxc)
         if(cmd(fxc)):
