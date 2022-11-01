@@ -6,7 +6,7 @@
   </p>
 </div>
 
-Foxy is CLI application that allows you to create trojans,rat virusses and more...
+Foxy is CLI application that allows you to create trojans,rat virusses and more...\
 Here is the installation script.
 ```
 git clone https://github.com/foxysec/Foxy
