@@ -16,7 +16,7 @@ python foxy.py # Start Foxy
 ```
 
 ## Payloads :
-Avaliable Payloads inside of Foxy App.
+Avaliable Payloads :
 
 ```cpp
 Payload                         Name             Status
