@@ -89,6 +89,8 @@ def cmd(fxc):
             return True 
         case 'show config' :
             print_config()
+        case 'show' :
+            print_config()
             return True 
         case 'help' :
             print(config._help)
