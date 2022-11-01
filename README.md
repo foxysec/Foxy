@@ -15,6 +15,16 @@ pip install -r requirements.txt
 python foxy.py # Start Foxy
 ```
 
+## Payloads :
+Avaliable Payloads inside of Foxy App.
+
+```cpp
+Payload                         Name             Status
+------------------------------  ---------------  ---------
+foxy::discord::webhook-spammer  Webhook Spammer  Avaliable
+foxy::net::port-scanner         Port Scanner     Avaliable
+```
+
 # Guide & Usage
 * To get help type 'help' and press enter. You Will get this result :
 ```
@@ -30,18 +40,10 @@ python foxy.py # Start Foxy
 ● [Advanced]:
     list                : list avaliable payloads
     set payload <pn>    : set payload to start 
+    back                : back to Foxy
 ```
 * Setting payload : Setting payload will run setted payload script. 
 
-## Payloads :
-Avaliable Payloads inside of Foxy App.
-
-```cpp
-Payload                         Name             Status
-------------------------------  ---------------  ---------
-foxy::discord::webhook-spammer  Webhook Spammer  Avaliable
-foxy::net::port-scanner         Port Scanner     Avaliable
-```
 
 #### **Developed by Foxy Security Team** :
 * [@Thesaderror](https://github.com/Thesaderror)
