@@ -40,6 +40,7 @@ Avaliable Payloads inside of Foxy App.
 Payload                         Name             Status
 ------------------------------  ---------------  ---------
 foxy::discord::webhook-spammer  Webhook Spammer  Avaliable
+foxy::net::port-scanner         Port Scanner     Avaliable
 ```
 
 #### **Developed by Foxy Security Team** :
