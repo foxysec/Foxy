@@ -140,4 +140,5 @@ def start_webhook_spammer():
         if(cmd(fxc)):
             pass
         else:
-            print(f"{ico.r_c2} {report.unknown_root(fxc)}")
+            if(fxc!='back'):
+                print(f"{ico.r_c2} {report.unknown_root(fxc)}")
