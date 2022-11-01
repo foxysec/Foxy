@@ -1,0 +1,14 @@
+{
+    "payloads": [
+        "foxy::discord::webhook-spammer" ,
+        "foxy::net::port-scanner"
+    ],
+    "names":[
+        "Webhook Spammer",
+        "Port Scanner"
+    ],
+    "status":[
+        "Avaliable",
+        "Avaliable"
+    ]
+}
