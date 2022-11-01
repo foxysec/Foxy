@@ -31,6 +31,7 @@ ___________________________________________
 
     set target:<target_ip>
 ___________________________________________""")
+    return True
 
 def run_exploit():
     target = config.target
