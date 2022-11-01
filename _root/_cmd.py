@@ -28,6 +28,7 @@ class config:
 {ico.r_c2} [Advanced]:
     list                : list avaliable payloads
     set payload <pn>    : set payload to start 
+    back                : back to Foxy
     
 """
 
