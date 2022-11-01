@@ -23,6 +23,8 @@ class ico:
     foxy_0 = color.orange+'Foxy'+color.reset # Normal Foxy 
     foxy_r = color.red+'Foxy'+color.reset # Root Foxy 
 
+    # LOG ICOS
+    b_m = color.reset+'['+color.blue+'*'+color.reset+']' # Blue Console Log ICO : [*]
     
     # Blue (No Error) 
     b_c0  = color.green+'◉'+color.reset # Blue Un Empty Circle

@@ -1,9 +1,9 @@
 from _fetch import *
 from _bug import *
-
-from discord_webhook import DiscordWebhook
+from discord import SyncWebhook
 
 import os 
+import time 
 
 class config:
     ps = f'[{ico.foxy_r}] > '
@@ -40,11 +40,20 @@ ___________________________________________
 ___________________________________________""")
 
 def run_exploit():
+    print(f"{ico.b_m} Starting webhook spammer")
+    for i in range(0,3):
+        print('.',end='')
+        time.sleep(0.7)
+    time.sleep(1)
     n = config.amount
-    webhook = DiscordWebhook(url=config.webhook, content=config.message)
+    t=1
+    webhook = SyncWebhook.from_url(config.webhook)
     while(n>0):
-        response = webhook.execute()
+        webhook.send(config.message)
+        print(f"{ico.b_m} Sent Messages : [{color.blue}{t}{color.reset}]",end='\r')
         n-=1
+        t+=1
+    print(f"{ico.b_m} Finished webhook spammer.\n")
 
 def vparse(vname,value):
     if(vname=="webhook"):

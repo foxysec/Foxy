@@ -32,8 +32,9 @@ ___________________________________________
 ___________________________________________""")
 
 def run_exploit():
-    print("\tPort\tAction\tService")
     target = config.target
+    print(f"{ico.b_m} Starting port scanning for {color.blue}{target}{color.reset}.\n")
+    print("\tPort\tAction\tService")
     lst = [20,21,22,23,53,25,40,44,69,80,139,137,443,444,445,4444,8080, 8443]
     for port in lst:
         s = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
