@@ -23,7 +23,7 @@ def getpayload_script(payloadname):
             return discord.webhook_spammer()
     match payloadname :
         case 'foxy::net::port-scanner':
-            return network.port_scanner()()
+            return network.port_scanner()
             
 
 def fastcontrol(payloadname):
