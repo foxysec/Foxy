@@ -7,8 +7,8 @@
         "Webhook Spammer",
         "Port Scanner"
     ],
-    "status":[
-        "Avaliable",
-        "Avaliable"
+    "platform":[
+        "Win/Linux/MacOs",
+        "Win/Linux/MacOs"
     ]
 }

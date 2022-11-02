@@ -10,3 +10,11 @@ class discord:
 class network:
     def port_scanner():
         start_port_scanner()
+
+def getpayload_script(payloadname):
+    match payloadname :
+        case 'foxy::discord::webhook-spammer':
+            return discord.webhook_spammer()
+    match payloadname :
+        case 'foxy::net::port-scanner':
+            return network.port_scanner()

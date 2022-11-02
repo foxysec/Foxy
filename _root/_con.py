@@ -3,6 +3,8 @@ import json
 
 from _payloads import discord
 from _payloads import network
+from _payloads import getpayload_script
+
 def getdb():
 
     db = ''
@@ -14,16 +16,9 @@ def getdb():
 class config:
     payloads = getdb()['payloads']
     names    = getdb()['names']
-    status   = getdb()['status']
+    platform = getdb()['platform']
 
 
-def getpayload_script(payloadname):
-    match payloadname :
-        case 'foxy::discord::webhook-spammer':
-            return discord.webhook_spammer()
-    match payloadname :
-        case 'foxy::net::port-scanner':
-            return network.port_scanner()
             
 
 def fastcontrol(payloadname):

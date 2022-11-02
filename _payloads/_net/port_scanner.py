@@ -81,9 +81,7 @@ def cmd(fxc):
         except:
             return False
         return True
-
-
-
+        
     match fxc:
         case 'history' :
             print(config.history)

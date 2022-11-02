@@ -44,20 +44,17 @@ def lpayloads():
     
     payloads = db['payloads']
     names    = db['names']
-    status   = db['status']
+    platform   = db['platform']
     n = len(payloads)
     data = []
     for i in range(0,n):
         lst = []
         lst.append(f"{color.redbg}{payloads[i]}{color.reset}")
         lst.append(f"{color.white2}{names[i]}{color.reset}")
-        if(status[i]=='Avaliable'):
-            lst.append(f"{color.green}{status[i]}{color.reset}")
-        else:
-            lst.append(f"{color.red}{status[i]}{color.reset}")
+        lst.append(f"{color.red}{platform[i]}{color.reset}")
         data.append(lst)
     print()
-    print (tabulate(data, headers=[f"{color.red}Payload{color.reset}", f"{color.white2}Name{color.reset}", f"{color.white2}Status{color.white2}"]))
+    print (tabulate(data, headers=[f"{color.red}Payload{color.reset}", f"{color.white2}Name{color.reset}", f"{color.white2}Platform{color.white2}"]))
     print()
     
     
