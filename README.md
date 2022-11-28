@@ -50,4 +50,4 @@ foxy::net::port-scanner         Port Scanner     Win/Linux/MacOs
 
 
 #### **Developed by Foxy Security Team** :
-* [@Thesaderror](https://github.com/Thesaderror)
+* [@redc86](https://github.com/redc86)
